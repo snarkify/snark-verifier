@@ -292,7 +292,7 @@ mod halo2_lib {
                 builder,
                 &points,
                 scalars,
-                C::Scalar::NUM_BITS as usize,
+                <C::Scalar as PrimeField>::NUM_BITS as usize,
             )
         }
 
@@ -316,7 +316,7 @@ mod halo2_lib {
                 builder,
                 &points,
                 scalars,
-                C::Scalar::NUM_BITS as usize,
+                <C::Scalar as PrimeField>::NUM_BITS as usize,
             )
         }
 
