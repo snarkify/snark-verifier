@@ -132,7 +132,7 @@ mod halo2_lib {
     use crate::halo2_proofs::halo2curves::CurveAffineExt;
     use crate::{
         loader::halo2::{EccInstructions, IntegerInstructions},
-        util::arithmetic::CurveAffine,
+        util::arithmetic::{self, CurveAffine},
     };
     use halo2_base::{
         self,
@@ -292,7 +292,7 @@ mod halo2_lib {
                 builder,
                 &points,
                 scalars,
-                C::Scalar::NUM_BITS as usize,
+                <C::Scalar as arithmetic::PrimeField>::NUM_BITS as usize,
             )
         }
 
@@ -316,7 +316,7 @@ mod halo2_lib {
                 builder,
                 &points,
                 scalars,
-                C::Scalar::NUM_BITS as usize,
+                <C::Scalar as arithmetic::PrimeField>::NUM_BITS as usize,
             )
         }
 
